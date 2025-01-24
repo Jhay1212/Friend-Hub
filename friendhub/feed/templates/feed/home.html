@@ -1,0 +1,33 @@
+{% extends 'base.html'%}
+{% block css %}
+    <style>
+        .chirp-container {
+            background: #000;
+        }
+    </style>
+{% endblock %}
+{% block content %}
+
+<div id="header">
+    <nav>
+        chu chu
+    </nav>
+</div>
+
+{% for c in object %}
+
+<a href="{% url 'detail_chirp' pk=c.id %}">
+    <div class="container border-ligtht">
+        <h2>{{ c.user }}</h2>
+        <p>{{ c.content }}</p>
+    </div>
+</a>
+{% endfor %}
+<div class="container post chirp-container">
+    <!-- <form action="" id="chirp-form" method="post">
+        {% csrf_token%}
+       {{ form.content.as_p }}
+       <button type="submit" class="btn">Chirp</button>
+    </form> -->
+</div>
+{% endblock %}
